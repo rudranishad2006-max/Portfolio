@@ -41,7 +41,7 @@ export default function Projects() {
         'https://lh3.googleusercontent.com/aida-public/AB6AXuA3b8e7tIPyi3QFYRE6pHVfUAB3fubSmaL_r86fLcL4P1KP1WB_aBwHx28xxjTnGSJyQzThwgr-mr9ZCtEVz8pSnqdQ8Ub4U5FsoXbBCWaM-5tVuBFXAzx8gkL-Yse-cMOGdDtpuPD4DRKGHCArwkZR99OfO7wvIz_bzm_E8gY2DXDh2M9ncIezrtQuf4zz0DhdSxHtG3MtZRhAFZFXNKZ2rGSXklHlhOdb-eb94gAm_-5WX9fEJe4GdNW7znDKN5vH1gcWRzj1e4lO',
       categories: ['Web Apps'],
       tech: ['API', 'JavaScript'],
-      link: 'https://rud-weather.vercel.app/',
+      link: '/hacked.html',
       featured: false,
       colSpan: 4,
       imageHeight: '200px',
@@ -108,6 +108,11 @@ export default function Projects() {
                 key={project.id}
                 className="project-card glass-card reveal visible"
                 style={{ gridColumn: `span ${project.colSpan}` }}
+                onClick={() => {
+                  if (project.link && project.link !== '#') {
+                    window.open(project.link, '_blank', 'noopener,noreferrer');
+                  }
+                }}
               >
                 <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
                   <div className="project-image" style={{ width: '40%', minHeight: '280px' }}>
@@ -135,7 +140,7 @@ export default function Projects() {
                     <p style={{ color: 'var(--on-surface-variant)', marginBottom: '20px' }}>
                       {project.description}
                     </p>
-                    <a className="project-link" href={project.link} target="_blank" rel="noopener noreferrer">
+                    <a className="project-link" href={project.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                       Case Study <span className="material-symbols-outlined">arrow_forward</span>
                     </a>
                   </div>
@@ -149,6 +154,11 @@ export default function Projects() {
               key={project.id}
               className="project-card glass-card reveal visible"
               style={{ gridColumn: `span ${project.colSpan}` }}
+              onClick={() => {
+                if (project.link && project.link !== '#') {
+                  window.open(project.link, '_blank', 'noopener,noreferrer');
+                }
+              }}
             >
               <div className="project-image" style={{ height: project.imageHeight }}>
                 <img src={project.image} alt={project.title} loading="lazy" />
@@ -182,7 +192,7 @@ export default function Projects() {
                   {project.title}
                 </h3>
                 <p style={{ color: 'var(--on-surface-variant)', marginBottom: '20px' }}>{project.description}</p>
-                <a className="project-link" href={project.link} target="_blank" rel="noopener noreferrer">
+                <a className="project-link" href={project.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                   View Live <span className="material-symbols-outlined">arrow_forward</span>
                 </a>
               </div>

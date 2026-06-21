@@ -253,7 +253,7 @@ export default function Skills() {
             >
               Currently Mastering
             </span>
-            <h4 class="font-headline text-headline-md" style={{ marginTop: '8px' }}>
+            <h4 className="font-headline text-headline-md" style={{ marginTop: '8px' }}>
               Generative AI
             </h4>
             <p style={{ color: 'var(--on-surface-variant)', marginTop: '8px' }}>
@@ -292,7 +292,7 @@ export default function Skills() {
             >
               Next Milestone
             </span>
-            <h4 class="font-headline text-headline-md" style={{ marginTop: '8px' }}>
+            <h4 className="font-headline text-headline-md" style={{ marginTop: '8px' }}>
               Cloud Architecture
             </h4>
             <p style={{ color: 'var(--on-surface-variant)', marginTop: '8px' }}>
@@ -315,7 +315,7 @@ export default function Skills() {
             >
               Aspiration
             </span>
-            <h4 class="font-headline text-headline-md" style={{ marginTop: '8px' }}>
+            <h4 className="font-headline text-headline-md" style={{ marginTop: '8px' }}>
               Rust & WebAssembly
             </h4>
             <p style={{ color: 'var(--on-surface-variant)', marginTop: '8px' }}>
