@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills Matrix | Rudra Nishad</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Syne:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#e9ddff",
+                    "inverse-on-surface": "#f1f0f7",
+                    "primary-fixed-dim": "#d0bcff",
+                    "surface": "#faf8ff",
+                    "surface-container": "#eeedf4",
+                    "surface-container-low": "#f4f3fa",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#5516be",
+                    "secondary-fixed-dim": "#ffb0cd",
+                    "on-secondary-fixed": "#3e0022",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "surface-tint": "#6d3bd7",
+                    "primary-container": "#8455ef",
+                    "on-primary-fixed": "#23005c",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e9",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1a1b20",
+                    "primary": "#6b38d4",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e8e7ee",
+                    "tertiary-container": "#00855b",
+                    "secondary-container": "#fd56a7",
+                    "inverse-primary": "#d0bcff",
+                    "secondary-fixed": "#ffd9e4",
+                    "secondary": "#b4136d",
+                    "outline": "#7b7486",
+                    "surface-bright": "#faf8ff",
+                    "tertiary": "#006947",
+                    "inverse-surface": "#2f3035",
+                    "on-tertiary-fixed": "#002113",
+                    "on-secondary-fixed-variant": "#8c0053",
+                    "on-primary-container": "#fffbff",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "background": "#faf8ff",
+                    "on-background": "#1a1b20",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#f5fff6",
+                    "on-secondary-container": "#600037",
+                    "on-surface-variant": "#494454",
+                    "surface-dim": "#dad9e0",
+                    "surface-variant": "#e2e2e9",
+                    "outline-variant": "#cbc3d7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "card-padding": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Syne"],
+                    "display": ["Syne"],
+                    "headline-lg": ["Syne"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-code": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Syne"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-code": ["14px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-surface {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(10%, 10%); }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #faf8ff; }
+        ::-webkit-scrollbar-thumb { background: #cbc3d7; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6b38d4; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Background Blobs -->
+<div class="blob bg-primary top-[-100px] left-[-100px]"></div>
+<div class="blob bg-secondary bottom-[-100px] right-[-100px]" style="animation-delay: -5s;"></div>
+<div class="blob bg-tertiary top-[40%] right-[10%] w-[300px] h-[300px]" style="animation-delay: -10s;"></div>
+<!-- Top Navigation Bar -->
+<header class="z-50 sticky top-4 mx-auto max-w-[90%] flex justify-between items-center px-gutter py-4 w-full bg-white/45 backdrop-blur-[24px] rounded-full border border-white/20 shadow-[0_8px_32px_0_rgba(107,56,212,0.1)] transition-transform duration-300">
+<div class="font-display text-headline-md font-extrabold text-primary">Rudra Nishad</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 hover:scale-105" href="#">Work</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 hover:scale-105" href="#">About</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer active:scale-95 hover:scale-105" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 hover:scale-105" href="#">Contact</a>
+</nav>
+<button class="bg-gradient-to-r from-primary to-secondary-container text-on-primary-container px-6 py-2 rounded-full font-bold shadow-lg hover:scale-105 transition-all duration-300 active:scale-95">Hire Me</button>
+</header>
+<main class="max-w-container-max mx-auto px-gutter pt-20 pb-section-gap">
+<!-- Header Section -->
+<section class="mb-section-gap">
+<h1 class="font-display text-headline-lg lg:text-display mb-6 tracking-tight">The Technical <br/><span class="text-primary italic">Artistry Matrix</span></h1>
+<p class="max-w-2xl font-body-lg text-body-lg text-on-surface-variant">
+                Mapping the intersection of robust Computer Science engineering and high-fidelity digital design. A collection of skills evolved through curiosity and technical playfulness.
+            </p>
+</section>
+<!-- Skills Matrix (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-section-gap">
+<!-- Development Glass Card -->
+<div class="md:col-span-8 group relative overflow-hidden glass-surface rounded-lg p-card-padding border border-white/20 shadow-sm hover:shadow-[0_20px_50px_rgba(107,56,212,0.15)] transition-all duration-500">
+<div class="flex justify-between items-start mb-8">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-4 p-3 bg-primary-fixed rounded-2xl">code</span>
+<h3 class="font-headline-md text-headline-md mb-2">Core Development</h3>
+<p class="text-on-surface-variant max-w-md">Scalable systems and expressive interfaces built with performance at the heart.</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-code text-label-code flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-[18px]">terminal</span> React.js
+                    </span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-code text-label-code flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-[18px]">terminal</span> TypeScript
+                    </span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-code text-label-code flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-[18px]">terminal</span> Node.js
+                    </span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-code text-label-code flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-[18px]">terminal</span> Python
+                    </span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-code text-label-code flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-[18px]">terminal</span> PostgreSQL
+                    </span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-1.5 rounded-full font-label-code text-label-code flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-[18px]">terminal</span> Docker
+                    </span>
+</div>
+</div>
+<!-- Creative Tools Card -->
+<div class="md:col-span-4 glass-surface rounded-lg p-card-padding border border-white/20 flex flex-col justify-between hover:shadow-[0_20px_50px_rgba(253,86,167,0.15)] transition-all duration-500">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 p-3 bg-secondary-fixed rounded-2xl">palette</span>
+<h3 class="font-headline-md text-headline-md mb-2">Creative Suite</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">brush</span>
+</div>
+<div>
+<p class="font-bold">Figma & UI Design</p>
+<p class="text-sm text-on-surface-variant">Design Systems & Prototyping</p>
+</div>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">animation</span>
+</div>
+<div>
+<p class="font-bold">Motion Design</p>
+<p class="text-sm text-on-surface-variant">Framer Motion & GSAP</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Visualization Card -->
+<div class="md:col-span-5 glass-surface rounded-lg overflow-hidden border border-white/20 min-h-[300px] flex flex-col hover:shadow-[0_20px_50px_rgba(0,105,71,0.1)] transition-all duration-500">
+<div class="p-card-padding flex-1">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 p-3 bg-tertiary-fixed rounded-2xl">monitoring</span>
+<h3 class="font-headline-md text-headline-md mb-2">Data Viz</h3>
+<p class="text-on-surface-variant mb-6">Translating complex datasets into beautiful, interactive narratives.</p>
+</div>
+<div class="h-40 relative bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#6b38d4 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="absolute bottom-0 left-0 right-0 h-full flex items-end justify-around px-8">
+<div class="w-6 bg-primary/40 rounded-t-lg h-[40%] transition-all duration-1000" style="height: 60%"></div>
+<div class="w-6 bg-secondary/40 rounded-t-lg h-[70%] transition-all duration-1000" style="height: 85%"></div>
+<div class="w-6 bg-tertiary/40 rounded-t-lg h-[50%] transition-all duration-1000" style="height: 45%"></div>
+<div class="w-6 bg-primary/40 rounded-t-lg h-[90%] transition-all duration-1000" style="height: 75%"></div>
+<div class="w-6 bg-secondary/40 rounded-t-lg h-[60%] transition-all duration-1000" style="height: 55%"></div>
+</div>
+</div>
+</div>
+<!-- Engineering Philosophy Card -->
+<div class="md:col-span-7 glass-surface rounded-lg p-card-padding border border-white/20 relative group overflow-hidden flex flex-col justify-center hover:shadow-[0_20px_50px_rgba(107,56,212,0.15)] transition-all duration-500">
+<div class="relative z-10">
+<h2 class="font-display text-headline-lg mb-4 text-primary">Technical Playfulness</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed max-w-xl">
+                        "I believe code is a medium for art. Whether it's optimizing a GraphQL query or fine-tuning a spring animation, the goal is always to create moments of delight without sacrificing technical rigor."
+                    </p>
+</div>
+<!-- Abstract geometry in background -->
+<div class="absolute top-[-50px] right-[-50px] w-64 h-64 border-[32px] border-primary/5 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
+</div>
+</section>
+<!-- Learning Path Section -->
+<section class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display text-headline-lg mb-4">Continuous Evolution</h2>
+<p class="text-on-surface-variant">The path of mastery is infinite. Here's what I'm currently exploring.</p>
+</div>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-primary via-secondary to-tertiary opacity-20"></div>
+<!-- Path Item 1 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-center">
+<div class="text-right hidden md:block">
+<span class="font-label-code text-primary uppercase tracking-widest text-sm font-bold">Currently Mastering</span>
+<h4 class="font-headline-md text-headline-md mt-2">Web3 Architecture</h4>
+<p class="text-on-surface-variant mt-2">Deep diving into Solidity and decentralized system design patterns.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background z-10 shadow-[0_0_15px_rgba(107,56,212,0.5)]"></div>
+<div class="md:pl-12">
+<div class="glass-surface p-6 rounded-lg border border-white/20 shadow-sm md:hidden mb-4">
+<span class="font-label-code text-primary uppercase tracking-widest text-xs font-bold">Currently Mastering</span>
+<h4 class="font-headline-md text-headline-md mt-2">Web3 Architecture</h4>
+</div>
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-6xl opacity-30">account_balance_wallet</span>
+</div>
+</div>
+</div>
+<!-- Path Item 2 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 mb-20 items-center">
+<div class="md:pr-12 md:text-right order-2 md:order-1">
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-6xl opacity-30">psychology</span>
+</div>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full border-4 border-background z-10 shadow-[0_0_15px_rgba(180,19,109,0.5)]"></div>
+<div class="md:pl-12 order-1 md:order-2">
+<span class="font-label-code text-secondary uppercase tracking-widest text-sm font-bold">Next Milestone</span>
+<h4 class="font-headline-md text-headline-md mt-2">Generative AI</h4>
+<p class="text-on-surface-variant mt-2">Leveraging LLMs to build agentic workflows and creative co-pilot tools.</p>
+<div class="glass-surface p-6 rounded-lg border border-white/20 shadow-sm md:hidden mb-4">
+<span class="font-label-code text-secondary uppercase tracking-widest text-xs font-bold">Next Milestone</span>
+<h4 class="font-headline-md text-headline-md mt-2">Generative AI</h4>
+</div>
+</div>
+</div>
+<!-- Path Item 3 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="text-right hidden md:block">
+<span class="font-label-code text-tertiary uppercase tracking-widest text-sm font-bold">Aspiration</span>
+<h4 class="font-headline-md text-headline-md mt-2">Rust WebAssembly</h4>
+<p class="text-on-surface-variant mt-2">Bridging the gap between native performance and web portability.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-tertiary rounded-full border-4 border-background z-10 shadow-[0_0_15px_rgba(0,105,71,0.5)]"></div>
+<div class="md:pl-12">
+<div class="glass-surface p-6 rounded-lg border border-white/20 shadow-sm md:hidden mb-4">
+<span class="font-label-code text-tertiary uppercase tracking-widest text-xs font-bold">Aspiration</span>
+<h4 class="font-headline-md text-headline-md mt-2">Rust WebAssembly</h4>
+</div>
+<div class="bg-surface-container-low p-8 rounded-lg border border-outline-variant/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-6xl opacity-30">settings_ethernet</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-8">
+<div class="text-center md:text-left">
+<div class="font-display text-headline-md text-primary mb-2">Rudra Nishad</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">© 2024 Rudra Nishad. Built with technical playfulness.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors hover:text-secondary-container transition-all" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors hover:text-secondary-container transition-all" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors hover:text-secondary-container transition-all" href="#">Dribbble</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors hover:text-secondary-container transition-all" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Update graph bars on scroll
+        const bars = document.querySelectorAll('.w-6');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    bars.forEach((bar, index) => {
+                        const heights = ['60%', '85%', '45%', '75%', '55%'];
+                        setTimeout(() => {
+                            bar.style.height = heights[index];
+                        }, index * 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const vizCard = document.querySelector('.md\\:col-span-5');
+        if (vizCard) observer.observe(vizCard);
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-150%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Floating blobs mouse parallax
+        document.addEventListener('mousemove', (e) => {
+            const blobs = document.querySelectorAll('.blob');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            blobs.forEach((blob, index) => {
+                const speed = (index + 1) * 20;
+                blob.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body></html>
