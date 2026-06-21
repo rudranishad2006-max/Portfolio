@@ -55,7 +55,7 @@ export default function Projects() {
         'https://lh3.googleusercontent.com/aida-public/AB6AXuA3wGsz7aQi2HEut1lSMS5ERjDezIEjjPKPsF0y46NJl-UwpoLXrK6XI6g4LoWZD9B8NPMo2lXtD2j5ePO9j8sTy6pnBH7tn-ZP_Yk85RZCmr5IeO9-dmzhdLGr-L-qtysOitnaP8cV39QYwiQ08HPNecCuj6R7r4htZzBQp4A9MsD9B7OrAx4d4mH60SdJxY3F_LOtGt_dJhI0fEOCFeR-Das58TKAzBvWlaw_Z8NZk5YQ50-86VaB7FFmyVyMm2-NMUCeOzXswpI_',
       categories: ['Web Apps', 'Creative Engineering'],
       tech: ['React', 'Node.js', 'MongoDB'],
-      link: 'https://taskflows.org/',
+      link: 'https://taskflowapp.framer.ai/',
       featured: false,
       colSpan: 8,
       horizontal: true,
