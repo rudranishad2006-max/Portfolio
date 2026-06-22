@@ -25,28 +25,6 @@ function App() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Disable Right-Click and DevTools shortcuts
-  useEffect(() => {
-    const handleContextMenu = (e) => e.preventDefault();
-    const handleKeyDown = (e) => {
-      if (
-        e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C' || e.key === 'i' || e.key === 'j' || e.key === 'c')) ||
-        (e.ctrlKey && (e.key === 'u' || e.key === 'U'))
-      ) {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener('contextmenu', handleContextMenu);
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('contextmenu', handleContextMenu);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
   return (
     <>
       {/* AMBIENT BACKGROUND BLOBS */}

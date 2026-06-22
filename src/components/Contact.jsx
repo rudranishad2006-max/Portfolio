@@ -7,48 +7,56 @@ export default function Contact() {
     email: '',
     subject: 'Collaboration Inquiry',
     message: '',
+    website: '', // Honeypot field (hidden from humans, filled by bots)
   });
 
   const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'sent'
 
-  const sanitize = (text) => {
-    return text.replace(/[&<>"']/g, (m) => {
-      const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#x27;',
-      };
-      return map[m];
-    });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Spam check: if honeypot field is filled, silently discard the submission
+    if (formData.website) {
+      console.warn("Spam submission blocked.");
+      setStatus('sending');
+      setTimeout(() => {
+        setStatus('sent');
+        setTimeout(() => {
+          setStatus('idle');
+          setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            subject: 'Collaboration Inquiry',
+            message: '',
+            website: '',
+          });
+        }, 3000);
+      }, 1500);
+      return;
+    }
     
-    // Client-side sanitization
-    const sanitizedData = {
-      firstName: sanitize(formData.firstName.trim()),
-      lastName: sanitize(formData.lastName.trim()),
-      email: sanitize(formData.email.trim()),
-      subject: sanitize(formData.subject),
-      message: sanitize(formData.message.trim()),
+    const submittedData = {
+      firstName: formData.firstName.trim(),
+      lastName: formData.lastName.trim(),
+      email: formData.email.trim(),
+      subject: formData.subject,
+      message: formData.message.trim(),
     };
 
     // Email regex validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    if (!emailRegex.test(submittedData.email)) {
       alert("Please enter a valid email address.");
       return;
     }
 
-    if (sanitizedData.firstName.length > 50 || sanitizedData.lastName.length > 50) {
+    if (submittedData.firstName.length > 50 || submittedData.lastName.length > 50) {
       alert("Name exceeds character limit of 50.");
       return;
     }
 
-    if (sanitizedData.message.length > 2000) {
+    if (submittedData.message.length > 2000) {
       alert("Message exceeds character limit of 2000.");
       return;
     }
@@ -67,6 +75,7 @@ export default function Contact() {
           email: '',
           subject: 'Collaboration Inquiry',
           message: '',
+          website: '',
         });
       }, 3000);
     }, 1500);
@@ -233,6 +242,19 @@ export default function Contact() {
               value={formData.message}
               onChange={handleChange}
             ></textarea>
+          </div>
+
+          {/* Honeypot field (hidden from humans) */}
+          <div style={{ display: 'none' }} aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              value={formData.website}
+              onChange={handleChange}
+              tabIndex="-1"
+              autoComplete="off"
+            />
           </div>
 
           <button
